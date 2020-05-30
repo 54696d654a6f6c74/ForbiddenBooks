@@ -86,6 +86,8 @@ namespace ForbiddenBooks.CLI
                 availableCommands.Add("user", new UserCommand(dc));
                 availableCommands.Add("market", new MarketCommand(dc));
                 availableCommands.Add("help", new HelpCommand(availableCommands));
+                availableCommands.Add("_filldb_", new FillDbCommand(dc));
+                availableCommands.Add("_resetdb_", new ResetDbCommand(dc));
             }
         }       
     }

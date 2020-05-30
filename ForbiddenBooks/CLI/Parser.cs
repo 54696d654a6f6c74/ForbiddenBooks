@@ -27,9 +27,11 @@ namespace ForbiddenBooks.CLI
         /// <returns>Returns said tuple.</returns>
         public Tuple<string, string[]> ParseInput(string input)
         {
-            input = input.ToLower();
             string[] flags = input.Split(delimiter).Where(x => x != "").ToArray();
-            
+
+            flags[0] = flags[0].ToLower();
+            if (flags.Length > 1) flags[1] = flags[1].ToLower();
+
             return new Tuple<string, string[]>(flags[0], flags[1..flags.Length]);
         }
 
